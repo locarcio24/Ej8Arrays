@@ -8,9 +8,9 @@ Para ello se pide:
 - Cargar los datos de todos los empleados.
 - Obtener el siguiente informe:
 
-INFORME DE TRABAJADORES
+**INFORME DE TRABAJADORES**
 
-NOMBRE CATEGORIA - IMPORTE VENTAS - IMPORTE COMISIÓN - IMPORTE A PERCIBIR
+**NOMBRE CATEGORIA - IMPORTE VENTAS - IMPORTE COMISIÓN - IMPORTE A PERCIBIR**
 
 Notas:
 - Se debe de comprobar que la categoría del trabajador exista
