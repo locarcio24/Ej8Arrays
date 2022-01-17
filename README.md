@@ -4,13 +4,13 @@ Una empresa dedicada a la venta de material escolar quiere calcular el importe d
 trabajadores.
 De cada trabajador se tiene el nombre, categoría y el importe de ventas.
 Para ello se pide:
-• Indicar el número de empleados que tiene la empresa.
-• Cargar los datos de todos los empleados.
-• Obtener el siguiente informe.
+- Indicar el número de empleados que tiene la empresa.
+- Cargar los datos de todos los empleados.
+- Obtener el siguiente informe:
 
 INFORME DE TRABAJADORES
 
-NOMBRE CATEGORIA IMPORTE VENTAS IMPORTE COMISIÓN IMPORTE A PERCIBIR
+NOMBRE CATEGORIA - IMPORTE VENTAS - IMPORTE COMISIÓN - IMPORTE A PERCIBIR
 
 Notas:
 - Se debe de comprobar que la categoría del trabajador exista
