@@ -15,7 +15,7 @@ Para ello se pide:
 Notas:
 - Se debe de comprobar que la categoría del trabajador exista
 - Los cálculos son los siguientes:
-	- Importe Comisión = Importe Ventas* Porcentaje Comisión
+	- Importe Comisión = Importe Ventas \* Porcentaje Comisión
 	- Importe a Percibir = Sueldo Base (en función de la categoría) + Importe Comisión
 
 El porcentaje para calcular el importe de la comisión se obtiene en función de las ventas que ha realizado el
