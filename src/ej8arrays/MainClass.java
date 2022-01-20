@@ -12,6 +12,7 @@ public class MainClass {
     public static void main(String[] args) {
         Empresa miEmpresa = new Empresa();
         miEmpresa.pedirInfo();
+        miEmpresa.printInfo();
     }
     
 }
