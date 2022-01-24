@@ -29,10 +29,9 @@ public class Empresa {
         comisiones[4] = new Comision(Float.MAX_VALUE, 0.25f);
     }
 
-    public void pedirInfo() {
+    public void pedirInfo(int nTrabajadores) {
         String nombreTrabj;
-        int nTrabajadores, categoriaTrabj, ventasTrabj;
-        nTrabajadores = Numero.pedirNumero("Introduce el numero de trabajadores-> ", 0);
+        int categoriaTrabj, ventasTrabj;
         trabajadores = new Trabajador[nTrabajadores];
         for (int nTra = 0; nTra < trabajadores.length; nTra++) {
             nombreTrabj = Texto.pedirString("Nombre del trabajador-> ");
@@ -43,10 +42,8 @@ public class Empresa {
         }
     }
 
-    private float calcularComision(Trabajador trabajador) {
-        int importeVentas;
+    private float calcularComision(int importeVentas) {
         float prcntComision, comision;
-        importeVentas = trabajador.getImporteVentas();
         if (importeVentas <= comisiones[0].getImporte()) {
             prcntComision = comisiones[0].getComision();
         } else if (importeVentas <= comisiones[1].getImporte()) {
@@ -78,7 +75,7 @@ public class Empresa {
             float importeComision, importePercibir;
             nombreCategoria = categorias[trabajador.getCategoria()].getDenominacion();
             importeVentas = trabajador.getImporteVentas();
-            importeComision = calcularComision(trabajador);
+            importeComision = calcularComision(trabajador.getImporteVentas());
             importePercibir = caclularPercibir(importeComision, trabajador.getCategoria());
             System.out.print(nombreCategoria + "\t\t\t" + importeVentas + "€\t\t\t");
             System.out.printf("%.2f€", importeComision);
