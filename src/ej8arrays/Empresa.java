@@ -10,8 +10,8 @@ import textos.Texto;
 public class Empresa {
 
     private Trabajador[] trabajadores;
-    private Categorias[] categorias;
-    private Comision[] comisiones;
+    private final Categorias[] categorias;
+    private final Comision[] comisiones;
 
     /**
      * Inicia las tablas categorias y comisiones para depues poder acceder a los
@@ -51,8 +51,11 @@ public class Empresa {
             trabajadores[numTra] = new Trabajador(nombreTrabj, categoriaTrabj, ventasTrabj);
         }
     }
-    
+
     /**
+     * Este metodo calcula el importe comision sabiendo el importe de ventas y
+     * el porcentaje de comsion
+     *
      * @param importeVentas El importe de ventas del trabajador
      * @return Devuelve el importe comision
      */
@@ -73,6 +76,15 @@ public class Empresa {
         return comision;
     }
 
+    /**
+     * Calcula el importe a percibir sabiendo el importe comision y la categoria
+     * del trabajador
+     *
+     * @param importeComision El importe comsion calculado en el metodo
+     * <strong>calcularComision</strong>
+     * @param categoria La categoria del trabajador
+     * @return Devuelve el importe a percibir
+     */
     private float caclularPercibir(float importeComision, int categoria) {
         float importePercibir;
         int sueldoBase;
@@ -82,7 +94,8 @@ public class Empresa {
     }
 
     /**
-     *
+     * Llama a todos los metodos para hacer los calculos e imprime por pantalla
+     * el resultado obtenido
      */
     public void printInfo() {
         System.out.println("\n\nINFORME DE TRABAJADORES\n-----------------------\nNOMBRE CATEGORIA\t\tIMPORTE VENTAS\t\tIMPORTE COMISION\t\tIMPORTE A PERCIBIR");
