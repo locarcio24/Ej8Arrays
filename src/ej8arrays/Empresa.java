@@ -9,10 +9,14 @@ import textos.Texto;
  */
 public class Empresa {
 
-    Trabajador[] trabajadores;
-    Categorias[] categorias;
-    Comision[] comisiones;
+    private Trabajador[] trabajadores;
+    private Categorias[] categorias;
+    private Comision[] comisiones;
 
+    /**
+     * Inicia las tablas categorias y comisiones para depues poder acceder a los
+     * datos
+     */
     public Empresa() {
         // Tabla de los tipos de categorias de un trabajador
         categorias = new Categorias[4];
@@ -29,19 +33,29 @@ public class Empresa {
         comisiones[4] = new Comision(Float.MAX_VALUE, 0.25f);
     }
 
+    /**
+     * Este metodo pide la informacion que se necesita para poder realizar el
+     * ejercicio
+     *
+     * @param nTrabajadores El numero de trabajadores en la empresa
+     */
     public void pedirInfo(int nTrabajadores) {
         String nombreTrabj;
         int categoriaTrabj, ventasTrabj;
         trabajadores = new Trabajador[nTrabajadores];
-        for (int nTra = 0; nTra < trabajadores.length; nTra++) {
+        for (int numTra = 0; numTra < trabajadores.length; numTra++) {
             nombreTrabj = Texto.pedirString("Nombre del trabajador-> ");
             System.out.println("0.- Administrativo\n1.- Operador\n2.- Programador\n3.- Analista");
             categoriaTrabj = Numero.pedirNumero("Introduce la categoria [0-3]-> ", 0, 3);
             ventasTrabj = Numero.pedirNumero("Introduce el importe de ventas-> ", 0);
-            trabajadores[nTra] = new Trabajador(nombreTrabj, categoriaTrabj, ventasTrabj);
+            trabajadores[numTra] = new Trabajador(nombreTrabj, categoriaTrabj, ventasTrabj);
         }
     }
-
+    
+    /**
+     * @param importeVentas El importe de ventas del trabajador
+     * @return Devuelve el importe comision
+     */
     private float calcularComision(int importeVentas) {
         float prcntComision, comision;
         if (importeVentas <= comisiones[0].getImporte()) {
