@@ -81,6 +81,9 @@ public class Empresa {
         return importePercibir;
     }
 
+    /**
+     *
+     */
     public void printInfo() {
         System.out.println("\n\nINFORME DE TRABAJADORES\n-----------------------\nNOMBRE CATEGORIA\t\tIMPORTE VENTAS\t\tIMPORTE COMISION\t\tIMPORTE A PERCIBIR");
         for (Trabajador trabajador : trabajadores) {
