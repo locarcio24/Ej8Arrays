@@ -60,17 +60,15 @@ public class Empresa {
      * @return Devuelve el importe comision
      */
     private float calcularComision(int importeVentas) {
-        float prcntComision, comision;
-        if (importeVentas <= comisiones[0].getImporte()) {
-            prcntComision = comisiones[0].getComision();
-        } else if (importeVentas <= comisiones[1].getImporte()) {
-            prcntComision = comisiones[1].getComision();
-        } else if (importeVentas <= comisiones[2].getImporte()) {
-            prcntComision = comisiones[2].getComision();
-        } else if (importeVentas <= comisiones[3].getImporte()) {
-            prcntComision = comisiones[3].getComision();
-        } else {
-            prcntComision = comisiones[4].getComision();
+        float comision, prcntComision = 0;
+        int pos = 0;
+        boolean encontrado = false;
+        while (!encontrado) {
+            if (importeVentas <= comisiones[pos].getImporte()) {
+                prcntComision = comisiones[pos].getComision();
+                encontrado = true;
+            }
+            pos++;
         }
         comision = importeVentas * prcntComision;
         return comision;
@@ -81,7 +79,7 @@ public class Empresa {
      * del trabajador
      *
      * @param importeComision El importe comsion calculado en el metodo
-     * <strong>calcularComision</strong>
+     * <strong>calcularComision()</strong>
      * @param categoria La categoria del trabajador
      * @return Devuelve el importe a percibir
      */
