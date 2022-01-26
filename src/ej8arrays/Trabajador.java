@@ -7,9 +7,10 @@ package ej8arrays;
 public class Trabajador {
 
     private final String nombre;
-    private int categoria, importeVentas;
+    private int categoria;
+    private float importeVentas;
 
-    public Trabajador(String nombre, int categoria, int importeVentas) {
+    public Trabajador(String nombre, int categoria, float importeVentas) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.importeVentas = importeVentas;
@@ -23,7 +24,7 @@ public class Trabajador {
         return categoria;
     }
 
-    public int getImporteVentas() {
+    public float getImporteVentas() {
         return importeVentas;
     }
 }

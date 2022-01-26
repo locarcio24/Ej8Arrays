@@ -45,8 +45,10 @@ public class Empresa {
         trabajadores = new Trabajador[nTrabajadores];
         for (int numTra = 0; numTra < trabajadores.length; numTra++) {
             nombreTrabj = Texto.pedirString("Nombre del trabajador-> ");
-            System.out.println("0.- Administrativo\n1.- Operador\n2.- Programador\n3.- Analista");
-            categoriaTrabj = Numero.pedirNumero("Introduce la categoria [0-3]-> ", 0, 3);
+            for (int pos = 0; pos < categorias.length; pos++) {
+                System.out.println(pos + 1 + ".- " + categorias[pos].getDenominacion());
+            }
+            categoriaTrabj = Numero.pedirNumero("Introduce la categoria [1-" + categorias.length + "]-> ", 0, categorias.length) - 1;
             ventasTrabj = Numero.pedirNumero("Introduce el importe de ventas-> ", 0);
             trabajadores[numTra] = new Trabajador(nombreTrabj, categoriaTrabj, ventasTrabj);
         }
@@ -59,7 +61,7 @@ public class Empresa {
      * @param importeVentas El importe de ventas del trabajador
      * @return Devuelve el importe comision
      */
-    private float calcularComision(int importeVentas) {
+    private float calcularComision(float importeVentas) {
         float comision, prcntComision = 0;
         int pos = 0;
         boolean encontrado = false;
@@ -99,8 +101,7 @@ public class Empresa {
         System.out.println("\n\nINFORME DE TRABAJADORES\n-----------------------\nNOMBRE CATEGORIA\t\tIMPORTE VENTAS\t\tIMPORTE COMISION\t\tIMPORTE A PERCIBIR");
         for (Trabajador trabajador : trabajadores) {
             String nombreCategoria;
-            int importeVentas;
-            float importeComision, importePercibir;
+            float importeComision, importePercibir, importeVentas;
             nombreCategoria = categorias[trabajador.getCategoria()].getDenominacion();
             importeVentas = trabajador.getImporteVentas();
             importeComision = calcularComision(trabajador.getImporteVentas());
